@@ -11,14 +11,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Assignment 1 Starter',
+      // remove the debug banner for a cleaner look
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
       ),
       home: const FirstScreen(),
     );
   }
 }
 
+// SCREEN 1
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
 
@@ -27,31 +30,41 @@ class FirstScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('First Screen'),
+        // matches the theme
+        backgroundColor: Colors.deepPurple, 
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Welcome to Screen 1',
-              style: TextStyle(fontSize: 24),
-            ),
-            const SizedBox(height: 20),
-            Image.network(
-              'https://via.placeholder.com/150', // Placeholder image
-              height: 150,
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SecondScreen()),
-                );
-              },
-              child: const Text('Go to Screen 2'),
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Welcome to Screen 1',
+                style: TextStyle(
+                  fontSize: 28, 
+                  fontWeight: FontWeight.bold,
+                  color: Colors.deepPurple,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 30), // EDITED: Increased spacing to 30
+              Image.network(
+                'https://via.placeholder.com/150', // We will update this next!
+                height: 150,
+              ),
+              const SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SecondScreen()),
+                  );
+                },
+                child: const Text('Go to Screen 2'),
+              ),
+            ],
+          ),
         ),
       ),
     );
