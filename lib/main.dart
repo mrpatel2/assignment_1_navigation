@@ -48,12 +48,18 @@ class FirstScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 30), // EDITED: Increased spacing to 30
-              Image.network(
-                'https://via.placeholder.com/150', // We will update this next!
-                height: 150,
+              const SizedBox(height: 30), 
+
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.network(
+                  'https://picsum.photos/id/1015/300/200', 
+                  height: 200,
+                  fit: BoxFit.cover,
+                ),
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 30), 
+              
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -61,7 +67,10 @@ class FirstScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const SecondScreen()),
                   );
                 },
-                child: const Text('Go to Screen 2'),
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                ),
+                child: const Text('Go to Screen 2', style: TextStyle(fontSize: 18)),
               ),
             ],
           ),
