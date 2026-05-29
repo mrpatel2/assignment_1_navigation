@@ -132,15 +132,12 @@ class SecondScreen extends StatelessWidget {
               // Added subtitle label below the title
               const Text(
                 'A different view of the world',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey,
-                ),
+                style: TextStyle(fontSize: 16, color: Colors.grey),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 30),
 
-              // Network image 
+              // Network image
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Image.network(
