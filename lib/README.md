@@ -11,7 +11,10 @@ It has two screens that the user can move between using on screen buttons.
 1. Make sure Flutter is installed on your machine
 2. Clone this repository: https://github.com/mrpatel2/assignment_1_navigation
 3. Go into the project folder: cd lib/main.dart
-4. Run the app on a simulator or emulator:
+4. Run the app on a simulator or emulator: flutter run
+5. Click “Go to Screen 2”  to go to the second screen
+6. Click on the back arrow at the top left to go back to screen 1 OR Click “Back to Screen 1” to go back
+
 
 #### Design Choices
 - Color theme: Deep purple (Colors.deepPurple) -  I used this consistently across both AppBars and title text
