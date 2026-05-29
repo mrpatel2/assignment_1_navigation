@@ -99,14 +99,17 @@ class FirstScreen extends StatelessWidget {
 }
 
 // SCREEN 2
+// added descriptive subtitle and improved button padding to match the design quality of Screen 1
 class SecondScreen extends StatelessWidget {
   const SecondScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Added backgroundColor to match Screen 1's theme
       appBar: AppBar(
         title: const Text('Second Screen'),
+        backgroundColor: Colors.deepPurple,
       ),
       body: Center(
         child: Padding(
@@ -114,13 +117,30 @@ class SecondScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Screen title text
+              // title matches Screen 1: deep purple and bold
               const Text(
-                'This is Screen 2',
-                style: TextStyle(fontSize: 24),
+                'Welcome to Screen 2',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.deepPurple,
+                ),
+                textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 8),
 
+              // Added subtitle label below the title
+              const Text(
+                'A different view of the world',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 30),
+
+              // Network image 
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Image.network(
@@ -129,14 +149,23 @@ class SecondScreen extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
 
-              // Button that pops this screen off the stack, going back to Screen 1
+              // added to match screen 1's button style
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: const Text('Back to Screen 1'),
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 12,
+                  ),
+                ),
+                child: const Text(
+                  'Back to Screen 1',
+                  style: TextStyle(fontSize: 18),
+                ),
               ),
             ],
           ),
